@@ -1,5 +1,5 @@
 {
-	"name": "SqlServerTable2",
+	"name": "SqlServerTableforeachcopysource",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SqlServer2",
@@ -7,10 +7,6 @@
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
-		"schema": [],
-		"typeProperties": {
-			"schema": "HumanResources",
-			"table": "Department"
-		}
+		"schema": []
 	}
 }
