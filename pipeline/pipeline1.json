@@ -100,7 +100,10 @@
 							"outputs": [
 								{
 									"referenceName": "DelimitedText1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": "@item().Table_name"
+									}
 								}
 							]
 						}
