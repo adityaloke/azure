@@ -1,28 +1,20 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorageoutLS",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"tablename": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().tablename",
-					"type": "Expression"
-				},
 				"container": "mycont"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": false,
 			"quoteChar": "\""
 		},
 		"schema": []

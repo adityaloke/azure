@@ -1,14 +1,9 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorageoutLS",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"tablename": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
@@ -16,10 +11,10 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().tablename",
+					"value": "@item().name",
 					"type": "Expression"
 				},
-				"container": "mycont"
+				"container": "product"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

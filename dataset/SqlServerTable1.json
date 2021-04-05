@@ -1,22 +1,22 @@
 {
-	"name": "AzureSqlTable2",
+	"name": "SqlServerTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase2",
+			"referenceName": "SqlServer1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"tablename": {
+			"TableName": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
-		"type": "AzureSqlTable",
+		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "SalesLT",
+			"schema": "dbo",
 			"table": {
-				"value": "@dataset().tablename",
+				"value": "@dataset().TableName",
 				"type": "Expression"
 			}
 		}
