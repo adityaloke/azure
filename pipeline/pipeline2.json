@@ -91,7 +91,13 @@
 							"outputs": [
 								{
 									"referenceName": "AzureSqlTable4",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": {
+											"value": "@item().Name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
