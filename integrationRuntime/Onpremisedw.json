@@ -1,0 +1,6 @@
+{
+	"name": "Onpremisedw",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
