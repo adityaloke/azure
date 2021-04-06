@@ -205,7 +205,8 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "AzureSqlSink"
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -229,10 +230,7 @@
 								"referenceName": "AzureSqlTable8",
 								"type": "DatasetReference",
 								"parameters": {
-									"tablename": {
-										"value": "{@item().name}",
-										"type": "Expression"
-									}
+									"tablename": "{@item().name}"
 								}
 							}
 						]
