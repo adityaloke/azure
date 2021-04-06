@@ -50,6 +50,12 @@
 		"SqlServer2_password": {
 			"value": ""
 		},
+		"SqlServer3_connectionString": {
+			"value": ""
+		},
+		"SqlServer3_password": {
+			"value": ""
+		},
 		"SqlServerq1_connectionString": {
 			"value": ""
 		},
@@ -61,6 +67,9 @@
 		},
 		"SqlServer2_properties_typeProperties_userName": {
 			"value": "ADITYA\\adity"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "adity"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
 			"value": "adity"

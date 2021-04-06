@@ -67,6 +67,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer2'"
 		},
+		"SqlServer3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
+		},
+		"SqlServer3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer3'"
+		},
 		"SqlServerq1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerq1'"
@@ -82,6 +90,10 @@
 		"SqlServer2_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ADITYA\\adity"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adity"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
 			"type": "string",
@@ -183,11 +195,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"SqlServer3_connectionString": {
+						"value": "[parameters('SqlServer3_connectionString')]"
+					},
+					"SqlServer3_password": {
+						"value": "[parameters('SqlServer3_password')]"
+					},
 					"SqlServerq1_connectionString": {
 						"value": "[parameters('SqlServerq1_connectionString')]"
 					},
 					"SqlServerq1_password": {
 						"value": "[parameters('SqlServerq1_password')]"
+					},
+					"SqlServer3_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
 					},
 					"SqlServerq1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServerq1_properties_typeProperties_userName')]"
