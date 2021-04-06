@@ -5,6 +5,11 @@
 			"referenceName": "SqlServerq1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [
@@ -133,8 +138,11 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "DimCustomer"
+			"schema": "",
+			"table": {
+				"value": "@dataset().filename",
+				"type": "Expression"
+			}
 		}
 	}
 }
