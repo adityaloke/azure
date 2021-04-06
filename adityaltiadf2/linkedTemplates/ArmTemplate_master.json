@@ -31,6 +31,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlmydbLS'"
 		},
+		"DestinationProductDBLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DestinationProductDBLS'"
+		},
+		"DimProductSourceLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DimProductSourceLS'"
+		},
+		"ProductSourceLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ProductSourceLS'"
+		},
 		"SqlSampleDBLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlSampleDBLS'"
@@ -104,8 +116,35 @@
 					"AzureSqlmydbLS_connectionString": {
 						"value": "[parameters('AzureSqlmydbLS_connectionString')]"
 					},
+					"DestinationProductDBLS_connectionString": {
+						"value": "[parameters('DestinationProductDBLS_connectionString')]"
+					},
+					"DimProductSourceLS_connectionString": {
+						"value": "[parameters('DimProductSourceLS_connectionString')]"
+					},
+					"ProductSourceLS_connectionString": {
+						"value": "[parameters('ProductSourceLS_connectionString')]"
+					},
 					"SqlSampleDBLS_connectionString": {
 						"value": "[parameters('SqlSampleDBLS_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adityaltiadf2_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"SqlServer1_connectionString": {
 						"value": "[parameters('SqlServer1_connectionString')]"
@@ -127,7 +166,9 @@
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adityaltiadf2_ArmTemplate_0')]"
+			]
 		}
 	]
 }

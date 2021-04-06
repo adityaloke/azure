@@ -23,6 +23,15 @@
 		"AzureSqlmydbLS_connectionString": {
 			"value": ""
 		},
+		"DestinationProductDBLS_connectionString": {
+			"value": ""
+		},
+		"DimProductSourceLS_connectionString": {
+			"value": ""
+		},
+		"ProductSourceLS_connectionString": {
+			"value": ""
+		},
 		"SqlSampleDBLS_connectionString": {
 			"value": ""
 		},
