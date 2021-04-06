@@ -1,0 +1,9 @@
+{
+	"name": "adityaltiadf2",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a2fde87c-f8a7-4f8b-943a-a407891c17fb",
+		"tenantId": "cd90d295-37df-427f-b4a8-1ebb3645664a"
+	}
+}
