@@ -265,7 +265,7 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "",
+					"schema": "dbo",
 					"table": {
 						"value": "@dataset().tablename",
 						"type": "Expression"
@@ -460,7 +460,7 @@
 					}
 				],
 				"typeProperties": {
-					"schema": "",
+					"schema": "dbo",
 					"table": {
 						"value": "@dataset().filename",
 						"type": "Expression"
