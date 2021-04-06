@@ -45,7 +45,7 @@
 						"referenceName": "AzureSqlTable8",
 						"type": "DatasetReference",
 						"parameters": {
-							"tablename": "@item().name"
+							"tablename": "DImCustomer"
 						}
 					}
 				]
