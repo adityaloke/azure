@@ -2,15 +2,29 @@
 	"name": "SqlServer3",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"parameters": {
+			"SERVERNAME": {
+				"type": "String"
+			},
+			"DATABASENAME": {
+				"type": "String"
+			},
+			"USERNAME": {
+				"type": "String"
+			},
+			"PASSWORD": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=True;data source=ADITYA\\ADITYA;initial catalog=AdventureWorks2012",
-			"userName": "adity",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZDUzZjkzZi02NzA3LTRmNjQtYTgzOS0yZThlYmI1OTQ4MmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"connectionString": "Integrated Security=True;Data Source=@{linkedService().SERVERNAME};Initial Catalog=@{linkedService().DATABASENAME}",
+			"userName": "@{linkedService().USERNAME}",
+			"password": "@{linkedService().PASSWORD}"
 		},
 		"connectVia": {
-			"referenceName": "integrationRuntime2",
+			"referenceName": "onprem",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
