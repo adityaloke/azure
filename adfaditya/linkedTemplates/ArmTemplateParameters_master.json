@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "adfaditya"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"AzureBlobStorageoutLS_connectionString": {
 			"value": ""
 		},
@@ -60,6 +63,9 @@
 			"value": ""
 		},
 		"SqlServerq1_password": {
+			"value": ""
+		},
+		"q3sqlsource_connectionString": {
 			"value": ""
 		},
 		"SqlServer1_properties_typeProperties_userName": {

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfaditya"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
 		"AzureBlobStorageoutLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageoutLS'"
@@ -83,6 +87,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServerq1'"
 		},
+		"q3sqlsource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'q3sqlsource'"
+		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ADITYA\\adity"
@@ -125,6 +133,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
 					"AzureBlobStorageoutLS_connectionString": {
 						"value": "[parameters('AzureBlobStorageoutLS_connectionString')]"
@@ -174,6 +185,9 @@
 					"SqlServer2_password": {
 						"value": "[parameters('SqlServer2_password')]"
 					},
+					"q3sqlsource_connectionString": {
+						"value": "[parameters('q3sqlsource_connectionString')]"
+					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					},
@@ -217,6 +231,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'adfaditya_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adfaditya_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfaditya_ArmTemplate_1')]"
 			]
 		}
 	]
