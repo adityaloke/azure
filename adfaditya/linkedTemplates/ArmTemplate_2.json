@@ -750,6 +750,11 @@
 					"referenceName": "q4sourceserver",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"colorname": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "SqlServerTable",
 				"schema": [

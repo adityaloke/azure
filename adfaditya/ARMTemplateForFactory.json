@@ -509,7 +509,12 @@
 										{
 											"referenceName": "q4",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"colorname": {
+													"value": "@pipeline().parameters.colorname",
+													"type": "Expression"
+												}
+											}
 										}
 									],
 									"outputs": [
@@ -518,7 +523,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"filename": {
-													"value": "@item().name",
+													"value": "@pipeline().parameters.colorname",
 													"type": "Expression"
 												}
 											}
@@ -2041,6 +2046,11 @@
 				"linkedServiceName": {
 					"referenceName": "q4sourceserver",
 					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"colorname": {
+						"type": "string"
+					}
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
