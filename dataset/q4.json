@@ -130,8 +130,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "Sales",
-			"table": "SalesOrderHeader"
+			"schema": "Production",
+			"table": "Product"
 		}
 	}
 }
