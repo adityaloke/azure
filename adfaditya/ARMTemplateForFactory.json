@@ -469,7 +469,7 @@
 										"source": {
 											"type": "SqlServerSource",
 											"sqlReaderQuery": {
-												"value": "select * from Production.Product where Color=pipeline().parameters.colorname",
+												"value": "select * from Production.Product where Color='Black'",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
@@ -507,7 +507,12 @@
 										{
 											"referenceName": "DelimitedText1",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"filename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
 										}
 									]
 								}
@@ -1325,11 +1330,20 @@
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"filename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@dataset().filename",
+							"type": "Expression"
+						},
 						"fileSystem": "output"
 					},
 					"columnDelimiter": ",",

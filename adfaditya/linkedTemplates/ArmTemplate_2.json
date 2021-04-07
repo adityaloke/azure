@@ -1342,7 +1342,7 @@
 										"source": {
 											"type": "SqlServerSource",
 											"sqlReaderQuery": {
-												"value": "select * from Production.Product where Color=pipeline().parameters.colorname",
+												"value": "select * from Production.Product where Color='Black'",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
@@ -1380,7 +1380,12 @@
 										{
 											"referenceName": "DelimitedText1",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"filename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
 										}
 									]
 								}
