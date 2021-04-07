@@ -7,10 +7,10 @@
 		"typeProperties": {
 			"connectionString": "integrated security=True;data source=ADITYA\\ADITYA;initial catalog=AdventureWorksDW2012",
 			"userName": "adity",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkNjk0YzM4Yi1hMGNkLTQ1NDgtYWQ4Zi03OTQ0NTM2YjQ4MTQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZGZhYzEyMy1lN2UxLTRhMTMtOTdhMi0wMzllZjgyMTZiMzciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "integrationRuntime2",
+			"referenceName": "onprem",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
