@@ -92,7 +92,13 @@
 							"inputs": [
 								{
 									"referenceName": "q4",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"colorname": {
+											"value": "@pipeline().parameters.colorname",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -101,7 +107,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@item().name",
+											"value": "@pipeline().parameters.colorname",
 											"type": "Expression"
 										}
 									}
