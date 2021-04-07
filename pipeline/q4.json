@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "select * from Sales.SalesOrderDetail where UnitPrice>3000",
+						"sqlReaderQuery": "select * from Production.Product where Color='Black'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
