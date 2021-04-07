@@ -1,0 +1,84 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfaditya"
+		},
+		"AzureBlobStorageoutLS_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase5_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase6_connectionString": {
+			"value": ""
+		},
+		"AzureSqlmydbLS_connectionString": {
+			"value": ""
+		},
+		"DestinationProductDBLS_connectionString": {
+			"value": ""
+		},
+		"DimProductSourceLS_connectionString": {
+			"value": ""
+		},
+		"ProductSourceLS_connectionString": {
+			"value": ""
+		},
+		"SqlSampleDBLS_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"SqlServer3_connectionString": {
+			"value": ""
+		},
+		"SqlServerq1_connectionString": {
+			"value": ""
+		},
+		"SqlServerq1_password": {
+			"value": ""
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "ADITYA\\adity"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "ADITYA\\adity"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "@{linkedService().USERNAME}"
+		},
+		"SqlServerq1_properties_typeProperties_userName": {
+			"value": "adity"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
