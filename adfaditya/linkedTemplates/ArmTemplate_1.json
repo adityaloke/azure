@@ -6,44 +6,22 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adfaditya"
-		},
-		"SqlServer3_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
-		},
-		"SqlServerq1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServerq1'"
-		},
-		"SqlServerq1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'SqlServerq1'"
-		},
-		"q4sourceserver_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'q4sourceserver'"
-		},
-		"q4sourceserver_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'q4sourceserver'"
-		},
-		"SqlServer3_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "@{linkedService().USERNAME}"
-		},
-		"SqlServerq1_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adity"
-		},
-		"q4sourceserver_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adity"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/onprem')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
@@ -401,6 +379,22 @@
 					"schema": "SalesLT",
 					"table": "Product"
 				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable12')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase7",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
 			},
 			"dependsOn": []
 		},
@@ -764,6 +758,37 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/JsonpotQ6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"colorname": {
+						"type": "string",
+						"defaultValue": "Red"
+					}
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@dataset().colorname",
+							"type": "Expression"
+						},
+						"container": "mycont"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Other')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -825,89 +850,6 @@
 				"schema": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServer3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"parameters": {
-					"SERVERNAME": {
-						"type": "String"
-					},
-					"DATABASENAME": {
-						"type": "String"
-					},
-					"USERNAME": {
-						"type": "String"
-					},
-					"PASSWORD": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServer3_connectionString')]",
-					"userName": "[parameters('SqlServer3_properties_typeProperties_userName')]",
-					"password": "@{linkedService().PASSWORD}"
-				},
-				"connectVia": {
-					"referenceName": "onprem",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/onprem')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServerq1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServerq1_connectionString')]",
-					"userName": "[parameters('SqlServerq1_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('SqlServerq1_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "onprem",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/onprem')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/q4sourceserver')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('q4sourceserver_connectionString')]",
-					"userName": "[parameters('q4sourceserver_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('q4sourceserver_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "onprem",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/onprem')]"
-			]
 		}
 	]
 }

@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase6'"
 		},
+		"AzureSqlDatabase7_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase7'"
+		},
 		"AzureSqlmydbLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlmydbLS'"
@@ -83,6 +87,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
 		},
+		"SqlServer4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer4'"
+		},
+		"SqlServer4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer4'"
+		},
 		"SqlServerq1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerq1'"
@@ -122,6 +134,10 @@
 		"SqlServer3_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "@{linkedService().USERNAME}"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adity"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
 			"type": "string",
@@ -185,6 +201,9 @@
 					"AzureSqlDatabase6_connectionString": {
 						"value": "[parameters('AzureSqlDatabase6_connectionString')]"
 					},
+					"AzureSqlDatabase7_connectionString": {
+						"value": "[parameters('AzureSqlDatabase7_connectionString')]"
+					},
 					"AzureSqlmydbLS_connectionString": {
 						"value": "[parameters('AzureSqlmydbLS_connectionString')]"
 					},
@@ -244,30 +263,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"SqlServer3_connectionString": {
-						"value": "[parameters('SqlServer3_connectionString')]"
-					},
-					"SqlServerq1_connectionString": {
-						"value": "[parameters('SqlServerq1_connectionString')]"
-					},
-					"SqlServerq1_password": {
-						"value": "[parameters('SqlServerq1_password')]"
-					},
-					"q4sourceserver_connectionString": {
-						"value": "[parameters('q4sourceserver_connectionString')]"
-					},
-					"q4sourceserver_password": {
-						"value": "[parameters('q4sourceserver_password')]"
-					},
-					"SqlServer3_properties_typeProperties_userName": {
-						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
-					},
-					"SqlServerq1_properties_typeProperties_userName": {
-						"value": "[parameters('SqlServerq1_properties_typeProperties_userName')]"
-					},
-					"q4sourceserver_properties_typeProperties_userName": {
-						"value": "[parameters('q4sourceserver_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -288,6 +283,39 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer3_connectionString": {
+						"value": "[parameters('SqlServer3_connectionString')]"
+					},
+					"SqlServer4_connectionString": {
+						"value": "[parameters('SqlServer4_connectionString')]"
+					},
+					"SqlServer4_password": {
+						"value": "[parameters('SqlServer4_password')]"
+					},
+					"SqlServerq1_connectionString": {
+						"value": "[parameters('SqlServerq1_connectionString')]"
+					},
+					"SqlServerq1_password": {
+						"value": "[parameters('SqlServerq1_password')]"
+					},
+					"q4sourceserver_connectionString": {
+						"value": "[parameters('q4sourceserver_connectionString')]"
+					},
+					"q4sourceserver_password": {
+						"value": "[parameters('q4sourceserver_password')]"
+					},
+					"SqlServer3_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
+					},
+					"SqlServer4_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_userName')]"
+					},
+					"SqlServerq1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServerq1_properties_typeProperties_userName')]"
+					},
+					"q4sourceserver_properties_typeProperties_userName": {
+						"value": "[parameters('q4sourceserver_properties_typeProperties_userName')]"
 					}
 				}
 			},

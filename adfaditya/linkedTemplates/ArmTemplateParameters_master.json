@@ -32,6 +32,9 @@
 		"AzureSqlDatabase6_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase7_connectionString": {
+			"value": ""
+		},
 		"AzureSqlmydbLS_connectionString": {
 			"value": ""
 		},
@@ -60,6 +63,12 @@
 			"value": ""
 		},
 		"SqlServer3_connectionString": {
+			"value": ""
+		},
+		"SqlServer4_connectionString": {
+			"value": ""
+		},
+		"SqlServer4_password": {
 			"value": ""
 		},
 		"SqlServerq1_connectionString": {
@@ -91,6 +100,9 @@
 		},
 		"SqlServer3_properties_typeProperties_userName": {
 			"value": "@{linkedService().USERNAME}"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"value": "adity"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
 			"value": "adity"
