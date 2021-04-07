@@ -1,0 +1,28 @@
+{
+	"name": "JsonpotQ6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"colorname": {
+				"type": "string",
+				"defaultValue": "Red"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().colorname",
+					"type": "Expression"
+				},
+				"container": "mycont"
+			}
+		},
+		"schema": {}
+	}
+}
