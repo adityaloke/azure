@@ -35,6 +35,12 @@
 		"AzureSqlDatabase7_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase8_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase9_connectionString": {
+			"value": ""
+		},
 		"AzureSqlmydbLS_connectionString": {
 			"value": ""
 		},
