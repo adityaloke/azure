@@ -11,6 +11,9 @@
 		"AzureBlobStorageoutLS_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
@@ -68,6 +71,18 @@
 		"q3sqlsource_connectionString": {
 			"value": ""
 		},
+		"q4sourceserver_connectionString": {
+			"value": ""
+		},
+		"q4sourceserver_password": {
+			"value": ""
+		},
+		"q5sourcels_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://strgacctgen2.dfs.core.windows.net"
+		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "ADITYA\\adity"
 		},
@@ -78,6 +93,9 @@
 			"value": "@{linkedService().USERNAME}"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
+			"value": "adity"
+		},
+		"q4sourceserver_properties_typeProperties_userName": {
 			"value": "adity"
 		},
 		"containerUri": {

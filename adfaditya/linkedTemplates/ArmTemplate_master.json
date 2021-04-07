@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageoutLS'"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -91,6 +95,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'q3sqlsource'"
 		},
+		"q4sourceserver_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'q4sourceserver'"
+		},
+		"q4sourceserver_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'q4sourceserver'"
+		},
+		"q5sourcels_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'q5sourcels'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://strgacctgen2.dfs.core.windows.net"
+		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ADITYA\\adity"
@@ -104,6 +124,10 @@
 			"defaultValue": "@{linkedService().USERNAME}"
 		},
 		"SqlServerq1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adity"
+		},
+		"q4sourceserver_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "adity"
 		},
@@ -139,6 +163,9 @@
 					},
 					"AzureBlobStorageoutLS_connectionString": {
 						"value": "[parameters('AzureBlobStorageoutLS_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
@@ -188,6 +215,12 @@
 					"q3sqlsource_connectionString": {
 						"value": "[parameters('q3sqlsource_connectionString')]"
 					},
+					"q5sourcels_connectionString": {
+						"value": "[parameters('q5sourcels_connectionString')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					},
@@ -221,11 +254,20 @@
 					"SqlServerq1_password": {
 						"value": "[parameters('SqlServerq1_password')]"
 					},
+					"q4sourceserver_connectionString": {
+						"value": "[parameters('q4sourceserver_connectionString')]"
+					},
+					"q4sourceserver_password": {
+						"value": "[parameters('q4sourceserver_password')]"
+					},
 					"SqlServer3_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
 					},
 					"SqlServerq1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServerq1_properties_typeProperties_userName')]"
+					},
+					"q4sourceserver_properties_typeProperties_userName": {
+						"value": "[parameters('q4sourceserver_properties_typeProperties_userName')]"
 					}
 				}
 			},
