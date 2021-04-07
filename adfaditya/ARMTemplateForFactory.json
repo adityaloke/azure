@@ -581,7 +581,7 @@
 								"referenceName": "JsonpotQ6",
 								"type": "DatasetReference",
 								"parameters": {
-									"colorname": "Red"
+									"filename": "file1"
 								}
 							}
 						]
@@ -1366,9 +1366,9 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"colorname": {
+					"filename": {
 						"type": "string",
-						"defaultValue": "Red"
+						"defaultValue": "file"
 					}
 				},
 				"annotations": [],
@@ -1377,7 +1377,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@dataset().colorname",
+							"value": "@dataset().filename",
 							"type": "Expression"
 						},
 						"container": "mycont"

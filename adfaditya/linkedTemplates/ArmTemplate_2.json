@@ -203,7 +203,7 @@
 								"referenceName": "JsonpotQ6",
 								"type": "DatasetReference",
 								"parameters": {
-									"colorname": "Red"
+									"filename": "file1"
 								}
 							}
 						]

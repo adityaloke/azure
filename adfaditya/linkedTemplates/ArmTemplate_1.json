@@ -776,9 +776,9 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"colorname": {
+					"filename": {
 						"type": "string",
-						"defaultValue": "Red"
+						"defaultValue": "file"
 					}
 				},
 				"annotations": [],
@@ -787,7 +787,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@dataset().colorname",
+							"value": "@dataset().filename",
 							"type": "Expression"
 						},
 						"container": "mycont"
