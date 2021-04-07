@@ -1,0 +1,54 @@
+{
+	"name": "SqlServerTable3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SERVERNAME": {
+					"value": "@dataset().servername",
+					"type": "Expression"
+				},
+				"DATABASENAME": {
+					"value": "@dataset().databasename",
+					"type": "Expression"
+				},
+				"USERNAME": {
+					"value": "@dataset().username",
+					"type": "Expression"
+				},
+				"PASSWORD": {
+					"value": "@dataset().password",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			},
+			"servername": {
+				"type": "string"
+			},
+			"databasename": {
+				"type": "string"
+			},
+			"username": {
+				"type": "string"
+			},
+			"password": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Sales",
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -5,18 +5,11 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.value",
+						"value": "@pipeline().parameters.tablelist",
 						"type": "Expression"
 					},
 					"activities": [
@@ -54,11 +47,27 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SqlServerTable1",
+									"referenceName": "SqlServerTable3",
 									"type": "DatasetReference",
 									"parameters": {
-										"filename": {
+										"tablename": {
 											"value": "@item().name",
+											"type": "Expression"
+										},
+										"servername": {
+											"value": "@pipeline().parameters.servername",
+											"type": "Expression"
+										},
+										"databasename": {
+											"value": "@pipeline().parameters.databasename",
+											"type": "Expression"
+										},
+										"username": {
+											"value": "@pipeline().parameters.username",
+											"type": "Expression"
+										},
+										"password": {
+											"value": "@pipeline().parameters.password",
 											"type": "Expression"
 										}
 									}
@@ -66,7 +75,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable8",
+									"referenceName": "AzureSqlTable9",
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
@@ -79,34 +88,25 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Lookup1",
-				"type": "Lookup",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "SqlServerSource",
-						"sqlReaderQuery": "select name from sys.tables\n",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "SqlServerTable2",
-						"type": "DatasetReference"
-					},
-					"firstRowOnly": false
-				}
 			}
 		],
+		"parameters": {
+			"tablelist": {
+				"type": "array"
+			},
+			"servername": {
+				"type": "string"
+			},
+			"databasename": {
+				"type": "string"
+			},
+			"username": {
+				"type": "string"
+			},
+			"password": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
